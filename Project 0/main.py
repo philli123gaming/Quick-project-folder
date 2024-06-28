@@ -17,9 +17,12 @@ while True:
   response = input(f"I have the name as {project_name} is this ok? Y for yes and N for No\n")
   if response.lower() == "y" or response.lower() == "yes":
 
+#Grabs the parent folder and adds it to the project path
    parent_dir = os.path.join(os.getcwd(), os.pardir)
    project_path = os.path.join(parent_dir, project_name)
 
+#checks if the project name is already the EXACT name of a folder
+# if there isn't a new folder is made otherwise a quick kick back to the menu
    if not os.path.exists(project_path):
     os.mkdir(project_path)
     with open(f"{project_path}/main.py", 'w') as f:

@@ -12,3 +12,5 @@ need work
 
 for the first project I will be making my own project called project 0 a prequel project which will automate
 the process of adding new projects folders py files and such
+
+took me a >hour to get basic functions but hey it works
