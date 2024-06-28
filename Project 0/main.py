@@ -13,14 +13,18 @@ while True:
  reaction = int(input("Choose an option by number\n"))
 
  if reaction == 1:
-  project_name = input("What is the name of your project")
-  response = input(f"I have the name as {project_name} is this ok? Y for yes and N for No")
+  project_name = input("What is the name of your project\n")
+  response = input(f"I have the name as {project_name} is this ok? Y for yes and N for No\n")
   if response.lower() == "y" or response.lower() == "yes":
 
-   if not os.path.exists(project_name):
-    os.mkdir(project_name)
-    with open(f"{project_name}/main.py", 'w') as f:
+   parent_dir = os.path.join(os.getcwd(), os.pardir)
+   project_path = os.path.join(parent_dir, project_name)
+
+   if not os.path.exists(project_path):
+    os.mkdir(project_path)
+    with open(f"{project_path}/main.py", 'w') as f:
         pass
     print(f"quick project file named {project_name} created")
-
+   else:
+    print("A folder with that name already exists back to the Menu")
   pass
